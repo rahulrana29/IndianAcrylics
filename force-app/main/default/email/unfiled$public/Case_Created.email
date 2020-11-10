@@ -1,0 +1,2 @@
+Hello Case {!Case.Id} is created with {!Case.Priority} Priority, type {!Case.Type},
+Case origin {!Case.Origin} and case reason is {!Case.Reason}.

@@ -1,0 +1,9 @@
+Hello {!Contact.FirstName} {!Contact.LastName} ,
+
+The new opportunity has been created. 
+Opportunity Number : {!Opportunity.Opportunity_Number__c}
+
+
+
+Thanks
+Indian Acrylics

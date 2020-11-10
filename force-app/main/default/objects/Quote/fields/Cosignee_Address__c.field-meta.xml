@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cosignee_Address__c</fullName>
+    <externalId>false</externalId>
+    <formula>BillingStreet +&quot; &quot;+  BillingCity +&quot; &quot;+  BillingPostalCode +&quot; &quot;+ BillingState +&quot; &quot;+  BillingCountry</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Consignee Address</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

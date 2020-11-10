@@ -1,0 +1,173 @@
+<apex:page standardController="Quote"  renderAs="PDF"  extensions="QuotePdfPageExtension">  
+    <head>
+        <title>Quote Invoice</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/> 
+    </head>
+    <body>
+        <!-- this layout -->
+        <apex:pageBlock >
+            <apex:pageBlock >
+                <p style="text-align:center;padding: 0;margin:0;">
+                    <img src="{!$Resource.IndianAcrylicsLogo}"/>                
+                </p>
+            </apex:pageBlock>        
+            <apex:pageBlock > 
+                <p style="font-family: 'Open Sans', sans-serif; text-align:center; font-size:14px;margin:0;">
+                    <b>Head Office :</b>SCO 49-50-51, Sector-26, <br/>
+                    Madhya Marg, Chandigarh -160 019(INDIA)<br/>
+                    Tel : +91-172-2792385 / 2793112</p>  
+            </apex:pageBlock>
+            
+            <h1 style="text-align: center; margin: 0;font-size: 18px; padding: 0;"> PERFORMA INVOICE</h1>
+            
+            <div style="margin:0 auto; width:96%; font-size: 14px; border:1px solid #000;"> 
+                <table cellpadding="0" border="1" style="border-collapse:collapse; font-size: 14px; width: 100%; font-family: 'Open Sans', sans-serif;">
+                    
+                    <tr>
+                        <td rowspan="8" style="vertical-align:top;">
+                            <p style="margin-left: 10px; display: inline-block;">KHADI NATURAL HEALTHCARE<br/>		
+                                703-704, Shahpuri Tower, C-58<br/>	
+                                Janak Puri <br/>
+                                New Delhi-110058<br/>		
+                                ( INDIA )</p>		
+                        </td> </tr>
+                    <tr>
+                        <td colspan="2"><b> Quote No. - {!Quote.QuoteNumber}</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><b>Date : {!DAY(TODAY())}.{!MONTH(TODAY())}.{!YEAR(TODAY())}</b></td>
+                    </tr>
+                   
+                </table>
+                <table border="1" style=" border-collapse:collapse;width: 100%; font-family: 'Open Sans', sans-serif;">
+                    <tr>
+                        <td style=""><b> Price And Basic </b></td>
+                        <td style=""><b> Payment Term :</b></td>
+                        <td style=""><b> Bank Charges</b> </td>
+                        <td style=""><b> Last Shipping Date</b> </td>
+                    </tr>
+                    <tr>
+                        <td style=""> {!Quote.Price_and_Basic__c} </td>
+                        <td style=""> {!Quote.Payment_Terms__c} </td>
+                        <td style="text-align:center;"> {!Quote.Bank_charges__c} </td>
+                        <td style="text-align:center;"> {!Quote.Last_shipment_date__c} </td>
+                    </tr>
+                    <tr>
+                        <td style=""><b> Offer Validity </b></td>
+                        <td style=""><b> L/c Validity :</b></td>
+                        <td style=""><b> L/c Establishment Schedule</b> </td>
+                        <td style=""><b> Quantity / Value Variation</b> </td>
+                    </tr>
+                    <tr>
+                        <td style=""> {!Quote.Offer_Validity__c} </td>
+                        <td style=""> {!Quote.L_c_Validity__c} </td>
+                        <td style="text-align:center;"> {!Quote.L_c_Establishment_Schedule__c} </td>
+                        <td style="text-align:center;"> {!Quote.Quantity_Value_variation__c} </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style=""><b> Other Terms </b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style=""> {!Quote.Other_terms__c} </td>
+                    </tr>
+                </table>
+                <table border="1" style="font-size: 14px; border-collapse:collapse; width: 100%; font-family: 'Open Sans', sans-serif;">
+                    <tr style="border-bottom: 1px solid #000;background: #969696;"> 
+                        <th>S. NO</th> 
+                        <th>Description of goods</th> 
+                        <th>Quantity</th> 
+                        <th>Discount</th> 
+                        <th>GST-
+                            <div style="{!If(checkGSTtype == true,'display:block','display:none')}">
+                               <b>CGST+SGST</b>
+                            </div>
+                            <div style="{!If(checkGSTtype == false,'display:block','display:none')}">
+                                <b>IGST/UGST</b>
+                            </div></th>
+                        <th>MRP {!currencyType}</th> 
+                        <th>Amount in {!currencyType}</th> 
+                    </tr> 
+                    <apex:variable value="{!1}" var="count1" />
+                    <apex:repeat value="{!WrapperList.qliList}" var="QuoteLineItem">
+                        <tr style="text-align:center; vertical-align: top; "> 
+                            <td>{!count1}<apex:variable value="{!count1+1}" var="count1" /><br/></td>
+                            <td>{!QuoteLineItem.Product_Name}<br/></td>
+                            <td>{!QuoteLineItem.Quantity}<br/></td>
+                            <td>
+                                <div style="{!If(QuoteLineItem.discount == null,'display:block','display:none')}">
+                                    0%
+                                </div>
+                                <div style="{!If(QuoteLineItem.discount != null,'display:block','display:none')}">
+                                    <apex:outputText value="{0, number, ###,###,###,###}">
+                                        <apex:param value="{!QuoteLineItem.discount}" />
+                                    </apex:outputText>%
+                                </div>
+                                <br/>
+                            </td>
+                            <td>
+                                {!QuoteLineItem.gst}
+                                <br/>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,###,###,###.00}">
+                                    <apex:param value="{!QuoteLineItem.MRP}" />
+                                </apex:outputText>
+                                <br/>
+                            </td> 
+                            <td>
+                                <apex:outputText value="{0, number, ###,###,###,###.00}">
+                                    <apex:param value="{!QuoteLineItem.price}" />
+                                </apex:outputText>
+                                <br/>
+                            </td> 
+                            
+                        </tr>
+                    </apex:repeat>
+                    
+                    <tr style="text-align:left; vertical-align: top;">
+                        <td colspan="6" style="text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;border-top:1px solid #000;">
+                            <b>TOTAL </b> 
+                            <div style="{!If(checkGSTtype == true,'display:block','display:none')}">
+                                WITH <b>CGST+SGST</b>
+                            </div>
+                            <div style="{!If(checkGSTtype == false,'display:block','display:none')}">
+                                WITH <b>IGST/UGST</b>
+                            </div>
+                        </td>
+                        
+                        <td style="text-align:right;border-left:1px solid #000;border-top:1px solid #000;border-bottom:1px solid #000;">
+                            <b>
+                                <apex:outputText value="{0, number, ###,###,###,###.00}">
+                                    <apex:param value="{!WrapperList.Final_Price}" />
+                                </apex:outputText>
+                            </b>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr style="text-align:left; vertical-align: top;"> 
+                        <td colspan="7" style="text-align:left;border-right:1px solid #000;border-bottom:1px solid #000;border-top:1px solid #000;">
+                            AMOUNT CHARGEABLE (in words) : {!currencyType} {!WrapperList.Final_Price_Word} Only
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td colspan="4" style="border-top:0;border-bottom:0;">&nbsp;</td>
+                        <td colspan="3" style="border-top:0;border-bottom:0;">&nbsp;</td></tr>	
+                    <tr>
+                        <td colspan="4" style="border-top:0;border-bottom:0;"><br/>				
+                            Works / Regd. Office: Village Harkishanpura, Patiala - Sangrur Highway Distt Sangrur 148 026 (Pb.)
+                            Tel. +91 (1672) 278106, 278104, Fax: +91 (1672) 278110
+                            Delhi Office :               S-2. Second Floor. Vasant Square Mall Community Center Pocket V. Plot No.
+                            A Sector B Vasant Kunj, New Delhi-110 07O, Phone-011-40000378, 377.376
+                        </td>
+                        <td colspan="3" style="border-top:0;border-bottom:0; text-align:center;text-transform:uppercase;"><b>(Authorised Signatory)</b></td></tr>
+                    <tr><td colspan="4" style="border-top:0;" >&nbsp;</td>
+                        <td colspan="3" style="border-top:0;">&nbsp;</td></tr>
+                </table>
+            </div>
+        </apex:pageBlock>
+         <!-- End layout -->
+    </body>
+</apex:page>

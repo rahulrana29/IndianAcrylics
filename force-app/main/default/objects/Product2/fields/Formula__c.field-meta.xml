@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Distribution_Channel__c  =&apos;10&apos;&amp;&amp;  Division__c  = &apos;10&apos;, &apos;Fibre/tops/tows&apos;,
+IF(Distribution_Channel__c =&apos;10&apos; &amp;&amp; Division__c = &apos;20&apos;, &apos;Yarn&apos;,
+&apos;&apos;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

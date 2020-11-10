@@ -1,0 +1,9 @@
+Hello {!Contact.FirstName} {!Contact.LastName},
+
+The new Quote has been created.
+Quote Number : {!Quote.QuoteNumber}
+Opportunity Number : {!Quote.Opportunity_Number__c}
+
+
+Thanks
+Indian Acrylics

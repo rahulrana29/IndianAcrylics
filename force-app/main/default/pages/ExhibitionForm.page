@@ -1,0 +1,102 @@
+<apex:page showHeader="false" sidebar="false">
+    <html lang="en">
+        <head>
+            <title>Exhibition Form</title>
+            <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+            <style>
+                input:focus,select:focus{outline:none;}
+                .customForm{    
+                width: 30%;
+                margin: 0 auto;
+                background: #eee;
+                padding: 20px;
+                border-radius: 32px 0px 20px 0px;
+                }
+                
+                .customForm label {
+                width: 100%;
+                font-family: monospace;
+                display: inline-block;
+                font-size: 16px;
+                padding-bottom: 10px;
+                }
+                .customForm select{width: 100%;border-radius: 4px;
+                border: none;
+                padding: 10px;
+                box-shadow: 0 0 8px #ccc;
+                margin-bottom: 12px;}
+                .customForm input[type="text"]{
+                width: 95%;
+                border-radius: 4px;
+                border: none;
+                padding: 10px;font-family: monospace;
+                box-shadow: 0 0 8px #ccc;
+                margin-bottom: 12px;
+                }
+                input.submit {
+                background: #e4710c;
+                width: 100%;
+                box-shadow: 0px 3px 0px #864005;
+                padding: 10px;
+                border-radius: 4px;
+                margin: 8px auto 0;
+                text-align: center;
+                color: #fff;
+                font-family: monospace;
+                border: none;
+                font-size: 15px;
+                }
+                .header{
+                margin:0 auto;width: 800px;
+                text-align: center;}
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <span><img src="{!$Resource.IndianAcrylicsLogo}"/></span>
+            </div>
+            
+            <div class="customForm">
+                <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+                    
+                    <input type="hidden" name="oid" value="00D0p0000000fmU" />
+                    <input type="hidden" name="retURL" value="https://innovation-platform-47832-dev-ed--c.visualforce.com/apex/ExhibitionFormLandingPage?core.apexpages.request.devconsole=1" />
+                    
+                    
+                    <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text"  /><br/>
+                    
+                    <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true" /><br/>
+                    
+                    <label for="email">Email Address</label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true"/><br/>
+                    
+                    <label for="mobile">Mobile Phone</label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text" required="true" /><br/>
+                    
+                  
+                    <input type="hidden" id="00N0p000005NjLo" name="00N0p000005NjLo" value="Customer" />
+               
+                    <apex:outputPanel style="display:none">
+                        <select  id="lead_source" name="lead_source"><option value="Exhibition Form">Exhibition Form</option><option value="Web">Web</option>
+                            <option value="Other">Other</option>
+                            <option value="Exhibition Form">Exhibition Form</option>
+                            <option value="Reference">Reference</option>
+                            <option value="Call">Call</option>
+                        </select><br/>
+                    </apex:outputPanel>
+                    
+                    <label for="company">Company Name</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br/>
+                    <label>Products Interested</label><select  id="00N0p000005NjLq" name="00N0p000005NjLq" title="Products Intrested"><option value="">--None--</option><option value="Fibre">Fibre</option>
+                    <option value="Yarn">Yarn</option>
+                    <option value="Yarn">Both</option>
+                    </select><br/>
+                    
+                    <label>Country</label><input  id="00N0p000005Njix" maxlength="255" name="00N1s000000q2wn" size="20" type="text" /><br/>
+                    
+                    <label>State</label><input  id="00N0p000005NjnF" maxlength="255" name="00N1s000000q31x" size="20" type="text" /><br/>
+                    
+                    <input class="submit" type="submit" name="submit"/>
+                    
+                </form>
+            </div>
+        </body>
+    </html>
+</apex:page>

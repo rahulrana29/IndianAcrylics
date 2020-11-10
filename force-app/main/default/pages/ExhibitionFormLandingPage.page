@@ -1,0 +1,82 @@
+<apex:page showHeader="false" sidebar="false">
+    <html lang="en">
+        <head>
+            <title>Exhibition Form</title>
+            <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+            <style>
+                input:focus,select:focus{outline:none;}
+                .customForm{    
+                width: 30%;
+                margin: 0 auto;
+                background: #eee;
+                padding: 20px;
+                border-radius: 32px 0px 20px 0px;
+                }
+                
+                .customForm label {
+                width: 100%;
+                font-family: monospace;
+                display: inline-block;
+                font-size: 16px;
+                padding-bottom: 10px;
+                }
+                .customForm select{width: 100%;border-radius: 4px;
+                border: none;
+                padding: 10px;
+                box-shadow: 0 0 8px #ccc;
+                margin-bottom: 12px;}
+                .customForm input[type="text"]{
+                width: 95%;
+                border-radius: 4px;
+                border: none;
+                padding: 10px;font-family: monospace;
+                box-shadow: 0 0 8px #ccc;
+                margin-bottom: 12px;
+                }
+                input.submit {
+                background: #e4710c;
+                width: 100%;
+                box-shadow: 0px 3px 0px #864005;
+                padding: 10px;
+                border-radius: 4px;
+                margin: 8px auto 0;
+                text-align: center;
+                color: #fff;
+                font-family: monospace;
+                border: none;
+                font-size: 15px;
+                }
+                .header{
+                margin:0 auto;width: 800px;
+                text-align: center;}
+            </style>
+            
+        </head>
+        <body>
+            <div class="header">
+                <span><img src="{!$Resource.IndianAcrylicsLogo}"/></span>
+            </div>
+            
+            <div class="customForm">
+                <p style = "font-family:courier,arial,helvetica;font-size:34px;">
+                   <b> Lead Has been Created</b>
+                </p> 
+                
+                    <apex:form >
+                       
+                        <div style="text-align: center">
+                            
+                        <apex:commandButton value="Go Back" action="{!doSubmit}" oncomplete="abc();"/>
+                        </div>
+                        
+                    </apex:form>
+                    <script>
+                    function abc() {	
+                        window.location = 'https://sandbox-indian-acrylics--developer-edition.cs74.force.com/Exhibition/';
+                    }
+                    </script>
+                </div>
+           
+        </body>
+    </html>
+</apex:page>

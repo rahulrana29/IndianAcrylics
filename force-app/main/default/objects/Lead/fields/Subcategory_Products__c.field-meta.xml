@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subcategory_Products__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-Category Products</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Products_Intrested__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tow</fullName>
+                <default>false</default>
+                <label>Tow</label>
+            </value>
+            <value>
+                <fullName>Tops</fullName>
+                <default>false</default>
+                <label>Tops</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Fibre</controllingFieldValue>
+            <controllingFieldValue>Both</controllingFieldValue>
+            <valueName>Tow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fibre</controllingFieldValue>
+            <controllingFieldValue>Both</controllingFieldValue>
+            <valueName>Tops</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

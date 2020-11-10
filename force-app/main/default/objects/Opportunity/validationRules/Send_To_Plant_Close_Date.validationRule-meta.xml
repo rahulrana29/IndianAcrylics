@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_To_Plant_Close_Date</fullName>
+    <active>true</active>
+    <description>Sent To Plant Close Date is Mandatory .</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( StageName , &quot;Send To Plant&quot;),
+OR(
+ISBLANK ( TEXT( Send_to_Plant_Close_Date__c ) )
+)
+)</errorConditionFormula>
+    <errorDisplayField>Send_to_Plant_Close_Date__c</errorDisplayField>
+    <errorMessage>Sent To Plant Close Date is Mandatory .</errorMessage>
+</ValidationRule>

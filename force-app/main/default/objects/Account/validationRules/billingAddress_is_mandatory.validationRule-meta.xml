@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>billingAddress_is_mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR( 
+ISBLANK( BillingStreet ), 
+ISBLANK( BillingPostalCode ), 
+ISBLANK( BillingCity ), 
+ISBLANK( BillingCountry ) 
+)</errorConditionFormula>
+    <errorMessage>Billing Address is mandatory.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" controller="GetLocation">
+   
+    <aura:attribute name="userLatitude" type="String"/>
+    <aura:attribute name="userLongitude" type="String"/>
+    <aura:attribute name="hospitalLatitude" type="String"/>
+    <aura:attribute name="hospitalLongitude" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+</aura:component>

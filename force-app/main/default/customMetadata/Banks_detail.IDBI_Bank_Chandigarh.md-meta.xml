@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>IDBI Bank Chandigarh</label>
+    <protected>false</protected>
+    <values>
+        <field>Bank_info__c</field>
+        <value xsi:type="xsd:string">IDBI BANK CHANDIGARH.
+SCO 72-73 SECTOR-17B P.B.NO.27 CHANDIGARH PIN- 160017
+ACCOUNT NO.: 0143102000002042
+SWIFT CODE: IBKLINBB003 IFSC CODE: IBKL0000143
+IDBI BANK EMAIL: anurag.prakash@idbi.co.in, kumar.pradeep@idbi.co.in
+BANK TEL. 0172-5059735-5059740</value>
+    </values>
+</CustomMetadata>

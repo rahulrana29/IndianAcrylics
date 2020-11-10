@@ -1,0 +1,97 @@
+<apex:page standardController="Quote" extensions="quotePdfExtension"  renderAs="pdf" >
+    <html>
+        <apex:pageBlock >
+            <head>
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+            </head>
+        </apex:pageBlock>
+        <body style="font-family: 'Open Sans', sans-serif; font-size: 14px;">
+            <div style="border:1px solid #000;border-bottom:0;">
+                <table cellpadding="4" style="width:100%; font-size: 12px; border-collapse:collapse; font-family: 'Open Sans', sans-serif;">
+                     <tr>
+                         <td style="width:50%">
+                             <b>INDIAN ACRYLICS LTD.</b><br/>
+                         </td>
+                         <td style="width:50%; text-align:right"> 
+                             <span><img src="{!$Resource.IndianAcrylicsLogo}"/></span> 
+                         </td>
+                     </tr>
+                     
+                 </table>
+                <table cellpadding="4" style="width:100%; font-size: 12px; border-collapse:collapse; font-family: 'Open Sans', sans-serif;">
+                    <tr>
+                        <td style="text-align:center;font-weight:bold; font-size:20px"><b>QUOTE</b></td>
+                    </tr>
+                </table>
+                 <table cellpadding="4" style="width:100%; font-size: 12px; border-collapse:collapse; font-family: 'Open Sans', sans-serif;">
+                      <tr>
+                        <td style="width:60%">
+                            <table width="60%" border="0" cellspacing="0">
+                                <tr>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;" >
+                                        <b>Quote Name </b> 
+                                    </td>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;"> <b>:</b> {!Quote.Name}</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;" >
+                                        <b>Opportunity Name </b> 
+                                    </td>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;"> <b>:</b> {!Quote.Opportunity.Name}</td>
+                                </tr>
+                            </table>
+                          </td>
+                          <td style="width:40%; text-align:left">
+                              <table width="70%" border="0" cellspacing="0">
+                                   <tr>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;" >
+                                        <b>Quote Number </b> 
+                                    </td>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;"> <b>:</b> {!Quote.QuoteNumber	}</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;" >
+                                        <b>Expiration Date </b> 
+                                    </td>
+                                    <td style="text-overflow:  ellipsis !important;  white-space: nowrap !important;"> <b>:</b> {!Quote.Expiration_Date_Hidden__c}</td>
+                                </tr>
+                              </table>
+                          </td>
+                     </tr>
+                </table>
+                <br/>
+                <table cellpadding="4" style="width:100%; font-size: 12px; border-collapse:collapse; font-family: 'Open Sans', sans-serif;">
+                    <tr>
+                        <td style="text-align:center;font-weight:bold; font-size:20px"><b>Products List</b></td>
+                    </tr>
+                </table>
+                   <table border="1" style="width:100%; text-align:center;font-size: 12px; border-collapse:collapse; font-family: 'Open Sans', sans-serif; margin-top:0px;">
+                    <tbody>
+                        <tr style="border-top:1px solid #000;border-bottom:1px solid #000; background:#f5f5f5; height:20px;">
+                            <th style="text-align:left;">QuoteItem</th>
+                            <th style="text-align:center;">Product</th>
+                            <th style="text-align:center;">List Price</th>
+                            <th style="text-align:center;">Sales Price</th>
+                            <th style="text-align:center;">Quantity</th>
+                            <th style="text-align:center;">Discount</th>
+                            <th style="text-align:center;">Total Price</th>
+                         
+                        </tr>
+                        <apex:repeat value="{!QuoteWrapperList}" var="TableWrapper">
+                            <tr>
+                                <td style="text-align:left;">{!TableWrapper.QuoteItem}</td>
+                                <td style="text-align:center;">{!TableWrapper.ProductName} </td>
+                                <td style="text-align:center;">{!TableWrapper.ListPrice} </td>
+                                <td style="text-align:center;">{!TableWrapper.SalesPrice} </td>
+                                <td style="text-align:center;">{!TableWrapper.Quantity} </td>
+                                <td style="text-align:center;">{!TableWrapper.Discount} </td>
+                                <td style="text-align:center;">{!TableWrapper.TotalPrice} </td>   
+                            </tr>
+                        </apex:repeat>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </body>
+    </html>
+</apex:page>

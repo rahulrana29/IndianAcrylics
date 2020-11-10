@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Bank_Address_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISBLANK ( Other_Bank_Address__c ),ISPICKVAL( Bank_Name__c , &apos;Other&apos;))</errorConditionFormula>
+    <errorDisplayField>Other_Bank_Address__c</errorDisplayField>
+    <errorMessage>&apos;Other Bank Address&apos; is required.</errorMessage>
+</ValidationRule>

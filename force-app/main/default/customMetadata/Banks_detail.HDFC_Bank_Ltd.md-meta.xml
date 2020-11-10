@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>HDFC Bank Ltd</label>
+    <protected>false</protected>
+    <values>
+        <field>Bank_info__c</field>
+        <value xsi:type="xsd:string">HDFC BANK LTD.
+PLOT NO. 28 PHASE 1 INDUSTRIAL AREA CHANDIGARH 160002 SWIFT CODE OF HDFC BANK : HDFCINBB
+ACCOUNT NO.: 57500000466225 IFSC CODE: HDFC000873
+NOSTRO DETAILS:- Currency: OMR Correspondent Bank:-
+BANKMUSCAT SAOG CORRESPONDENT BANK&apos;S/ BIC / SWIFT CODE: BMUSOMRXXXX</value>
+    </values>
+</CustomMetadata>

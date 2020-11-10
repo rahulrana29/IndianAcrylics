@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Denied</fullName>
+    <active>true</active>
+    <description>If Quote status is Sample denied ,Denied Reason is mandatory.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Status, &quot;Sample Denied&quot;),
+OR(
+ISBLANK ( TEXT( Denied_Reason__c ) )
+)
+)</errorConditionFormula>
+    <errorDisplayField>Denied_Reason__c</errorDisplayField>
+    <errorMessage>If Quote status is Sample denied ,Denied Reason is mandatory.</errorMessage>
+</ValidationRule>

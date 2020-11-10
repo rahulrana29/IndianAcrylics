@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>State Bank of India</label>
+    <protected>false</protected>
+    <values>
+        <field>Bank_info__c</field>
+        <value xsi:type="xsd:string">STATE BANK OF INDIA
+SPECIALISED COMMERCIAL BRANCH, S.O.C. 103-106,
+SECTOR 17-B CHANDIGARH TEL. NO. 91-172-2712713
+FAX NO. 91-172-2703180 SWIFT : SBINNBB188
+IFSC CODE:- SBIN0009926 A/C- 10214998535</value>
+    </values>
+</CustomMetadata>

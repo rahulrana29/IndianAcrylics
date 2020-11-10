@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>UCO Bank</label>
+    <protected>false</protected>
+    <values>
+        <field>Bank_info__c</field>
+        <value xsi:type="xsd:string">UCO BANK
+SECTOR 17-B SCO 55-57 BANK SQUARE
+CURRENT ACCOUNT NO. 02360210001165 CHANDIGARH
+IFSC CODE: UCBA0000236 SWIFT CODE: UCBAINBB212
+EMAIL : CHA17B@UCOBANK.CO.IN
+FAX NO .0091-172-2706643 TEL NO. 0091-172-5062799</value>
+    </values>
+</CustomMetadata>
